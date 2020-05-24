@@ -44,12 +44,13 @@
     <Reference Include="DevExpress.Sparkline.v15.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v15.2" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="Humanizer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+    <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\TooSharp ORM C#.Net MySql\bin\Humanizer.dll</HintPath>
+      <HintPath>Database\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>E:\Setup\mysql-connector-net-8.0.20-noinstall\v4.8\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Database\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -64,16 +65,14 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TooSharp.Core">
-      <HintPath>..\..\..\..\..\..\..\TooSharp ORM C#.Net MySql\bin\TooSharp.Core.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ConfigurationDTO.cs" />
+    <Compile Include="DAO\DBMySQLUtils.cs" />
+    <Compile Include="DAO\DBUtils.cs" />
     <Compile Include="Forms\frmPrepareShoot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TSModels\TSRelationships.cs" />
-    <Compile Include="TSModels\Configuration.cs" />
     <Compile Include="Forms\frmPrepareShoot.Designer.cs">
       <DependentUpon>frmPrepareShoot.cs</DependentUpon>
     </Compile>
@@ -154,6 +153,10 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\MySql.Data.dll" />
+    <Content Include="Database\MySql.Data.EntityFramework.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
